@@ -13,7 +13,11 @@
     <description>A Shopping mall made for my daughter</description>
 
     <modules>
+        <module>commons</module>
         <module>server-order</module>
+        <module>server-goods</module>
+        <module>server-purchase</module>
+        <module>server-wms</module>
     </modules>
 
     <scm>
@@ -51,6 +55,10 @@
         <lombok.version>1.18.18</lombok.version>
         <slf4j-api.version>1.7.30</slf4j-api.version>
 
+        <!-- 项目自定义 -->
+        <commons.version>1.0.0-SNAPSHOT</commons.version>
+
+        <!-- 插件 -->
         <plugin.compiler.version>3.8.0</plugin.compiler.version>
         <plugin.source.version>3.0.1</plugin.source.version>
         <plugin.surefire.version>2.22.1</plugin.surefire.version>
@@ -58,6 +66,19 @@
     </properties>
 
     <dependencies>
+        <!-- springBoot -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+            <version>${spring.boot.version}</version>
+        </dependency>
+
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
@@ -80,6 +101,11 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>2.4.4</version>
+            </plugin>
         </plugins>
     </build>
 </project>
