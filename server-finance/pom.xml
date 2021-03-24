@@ -7,20 +7,21 @@
         <groupId>cn.ld.peach.mall</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>server-purchase</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>server-finance</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>cn.ld.peach.mall</groupId>
+            <artifactId>server-wms</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
         <dependency>
             <groupId>cn.ld.peach.mall</groupId>
             <artifactId>commons</artifactId>
             <version>${commons.version}</version>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-        </plugins>
-    </build>
 </project>

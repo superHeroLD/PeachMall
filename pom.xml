@@ -18,6 +18,12 @@
         <module>server-goods</module>
         <module>server-purchase</module>
         <module>server-wms</module>
+        <module>server-user</module>
+        <module>server-logistics</module>
+        <module>server-promotion</module>
+        <module>server-customer</module>
+        <module>server-finance</module>
+        <module>server-schedule</module>
     </modules>
 
     <scm>

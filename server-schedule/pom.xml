@@ -7,9 +7,9 @@
         <groupId>cn.ld.peach.mall</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>server-purchase</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>server-schedule</artifactId>
 
     <dependencies>
         <dependency>
@@ -18,9 +18,4 @@
             <version>${commons.version}</version>
         </dependency>
     </dependencies>
-
-    <build>
-        <plugins>
-        </plugins>
-    </build>
 </project>
