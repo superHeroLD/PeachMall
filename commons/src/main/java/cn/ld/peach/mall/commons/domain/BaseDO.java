@@ -1,17 +1,17 @@
-package cn.ld.peach.mall.commons.domain.dto;
+package cn.ld.peach.mall.commons.domain;
 
 import lombok.Data;
 
 import java.util.Date;
 
 /**
- * 基础DTO
+ * 基础数据模型
  *
  * @author lidong
- * @date 2021/3/23
+ * @date 2021/3/25
  */
 @Data
-public class BaseDTO {
+public class BaseDO {
 
     /**
      * ID

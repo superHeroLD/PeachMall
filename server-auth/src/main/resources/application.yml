@@ -1,0 +1,38 @@
+# web
+server:
+  port: 8091
+  servlet:
+    context-path: /
+
+# DataSource Config
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/peach_mall?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+
+    ### datasource-pool
+    hikari:
+      auto-commit: true
+      connection-test-query: SELECT 1
+      connection-timeout: 10000
+      idle-timeout: 30000
+      max-lifetime: 900000
+      maximum-pool-size: 30
+      minimum-idle: 10
+      pool-name: HikariCP
+      validation-timeout: 1000
+    type: com.zaxxer.hikari.HikariDataSource
+
+# mybatis
+mybatis-plus:
+  #  mapper-locations: classpath:/mapper/*Mapper.xml
+  global-config:
+    banner: false
+    db-config:
+      id-type: auto
+  configuration:
+    cache-enabled: false
+    map-underscore-to-camel-case: true
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl

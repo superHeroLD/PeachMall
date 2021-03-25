@@ -1,17 +1,19 @@
-package cn.ld.peach.mall.customer;
+package cn.ld.peach.mall.auth;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * 会员中心
+ * 权限中心
  *
  * @author lidong
  * @date 2021/3/23
  */
 @SpringBootApplication
-public class ServerCustomerApplication {
+@MapperScan("cn.ld.peach.mall.auth.mapper")
+public class ServerAuthApplication {
     public static void main(String[] args) {
-        SpringApplication.run(ServerCustomerApplication.class, args);
+        SpringApplication.run(ServerAuthApplication.class, args);
     }
 }
