@@ -1,5 +1,6 @@
 package cn.ld.peach.mall.auth.controller;
 
+import cn.ld.peach.mall.auth.config.NacosConfig;
 import cn.ld.peach.mall.auth.domain.vo.AuthPriorityVO;
 import cn.ld.peach.mall.auth.service.AuthService;
 import cn.ld.peach.mall.commons.util.BeanCopierUtil;
@@ -24,9 +25,18 @@ public class AuthController {
 
     @Resource
     private AuthService authService;
+    @Resource
+    private NacosConfig nacosConfig;
 
     @GetMapping("/listRootAuthPriority")
     List<AuthPriorityVO> listRootAuthPriority() {
         return BeanCopierUtil.copyList(authService.listRootAuthPriority(), AuthPriorityVO.class);
+    }
+
+    @GetMapping("/getAppName")
+    String getAppName() {
+        String appName = nacosConfig.getAppName();
+        log.info("appName: {}", appName);
+        return appName;
     }
 }
