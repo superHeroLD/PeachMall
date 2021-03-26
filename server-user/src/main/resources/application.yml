@@ -52,5 +52,7 @@ dubbo:
   protocol:
     name: dubbo
     port: -1
+#  registry:
+#    address: spring-cloud://localhost
   cloud:
     subscribed-services: PeachMall-server-auth

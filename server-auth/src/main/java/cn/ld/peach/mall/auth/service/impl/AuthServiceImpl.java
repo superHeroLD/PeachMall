@@ -9,6 +9,7 @@ import cn.ld.peach.mall.commons.util.BeanCopierUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.config.annotation.DubboService;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.Collections;
@@ -21,7 +22,7 @@ import java.util.List;
  * @date 2021/3/25
  */
 @Slf4j
-@DubboService
+@Service
 public class AuthServiceImpl implements AuthService {
 
     @Resource

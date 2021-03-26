@@ -13,6 +13,7 @@ import java.util.Date;
 @Data
 public class AuthPriorityDTO {
 
+
     /**
      * ID
      */
