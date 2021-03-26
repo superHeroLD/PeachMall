@@ -1,6 +1,6 @@
 # web
 server:
-  port: 8191
+  port: 8192
   servlet:
     context-path: /
 
@@ -8,7 +8,7 @@ server:
 spring:
   #Nacos 配置
   application:
-    name: PeachMall-server-auth
+    name: PeachMall-server-user
   cloud:
     nacos:
       discovery:
@@ -48,11 +48,9 @@ mybatis-plus:
 # Dubbo服务配置
 dubbo:
   scan:
-    base-packages: cn.ld.peach.mall.auth.service
+    base-packages: cn.ld.peach.mall.user.service
   protocol:
     name: dubbo
     port: -1
-  registry:
-    address: spring-cloud://localhost
   cloud:
     subscribed-services: PeachMall-server-auth
