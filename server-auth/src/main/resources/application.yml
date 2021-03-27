@@ -13,9 +13,6 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-      config:
-        server-addr: 127.0.0.1:8848
-        namespace: d9aee15a-6a34-4531-a2b7-17835f3082a4
   #数据库配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -59,3 +56,7 @@ dubbo:
     address: spring-cloud://localhost
   cloud:
     subscribed-services: PeachMall-server-auth
+
+nacos:
+  config:
+    server-addr: 127.0.0.1:8848
