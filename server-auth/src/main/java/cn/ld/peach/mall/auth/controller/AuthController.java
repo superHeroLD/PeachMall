@@ -31,9 +31,6 @@ public class AuthController {
     @Resource
     private NacosConfig nacosConfig;
 
-    @Value("${message:nulla}")
-    private String message;
-
     @GetMapping("/listRootAuthPriority")
     List<AuthPriorityVO> listRootAuthPriority() {
         return BeanCopierUtil.copyList(authService.listRootAuthPriority(), AuthPriorityVO.class);

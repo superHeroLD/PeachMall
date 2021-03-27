@@ -1,0 +1,1 @@
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=cn.ld.peach.mall.commons.config.ConfigCenterConfiguration

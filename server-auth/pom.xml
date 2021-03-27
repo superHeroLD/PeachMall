@@ -50,9 +50,16 @@
             <artifactId>mybatis-plus-boot-starter</artifactId>
         </dependency>
 
+        <!-- commons -->
         <dependency>
             <groupId>cn.ld.peach.mall</groupId>
             <artifactId>commans-lang</artifactId>
+            <version>${commons.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>cn.ld.peach.mall</groupId>
+            <artifactId>commons-config</artifactId>
             <version>${commons.version}</version>
         </dependency>
     </dependencies>
