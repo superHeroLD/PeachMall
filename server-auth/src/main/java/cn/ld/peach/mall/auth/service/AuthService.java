@@ -47,4 +47,11 @@ public interface AuthService {
      * @return 权限信息
      */
     AuthPriorityDTO getAuthPriorityById(Long parentId);
+
+    /**
+     * 删除权限
+     *
+     * @param id 权限ID
+     */
+    Boolean removeAuthPriority(Long id);
 }

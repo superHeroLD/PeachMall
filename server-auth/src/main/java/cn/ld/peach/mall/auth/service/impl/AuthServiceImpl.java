@@ -1,9 +1,14 @@
 package cn.ld.peach.mall.auth.service.impl;
 
 import cn.hutool.core.collection.CollectionUtil;
+import cn.ld.peach.mall.auth.design.visiter.PriorityNodeRelateCheckVisitor;
+import cn.ld.peach.mall.auth.design.visiter.PriorityNodeRelateDeleteVisitor;
 import cn.ld.peach.mall.auth.domain.AuthPriority;
+import cn.ld.peach.mall.auth.domain.PriorityNode;
 import cn.ld.peach.mall.auth.domain.dto.AuthPriorityDTO;
+import cn.ld.peach.mall.auth.mapper.AccountPriorityRelationshipMapper;
 import cn.ld.peach.mall.auth.mapper.AuthPriorityMapper;
+import cn.ld.peach.mall.auth.mapper.RolePriorityRelationshipMapper;
 import cn.ld.peach.mall.auth.service.AuthService;
 import cn.ld.peach.mall.commons.lang.util.BeanCopierUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -30,6 +35,10 @@ public class AuthServiceImpl implements AuthService {
 
     @Resource
     private AuthPriorityMapper authPriorityMapper;
+    @Resource
+    private RolePriorityRelationshipMapper rolePriorityRelationshipMapper;
+    @Resource
+    private AccountPriorityRelationshipMapper accountPriorityRelationshipMapper;
 
     @Override
     public List<AuthPriorityDTO> listRootAuthPriority() {
@@ -66,5 +75,35 @@ public class AuthServiceImpl implements AuthService {
     public AuthPriorityDTO getAuthPriorityById(Long id) {
         checkArgument(Objects.nonNull(id) && id > 0, "id is error");
         return BeanCopierUtil.copy(authPriorityMapper.selectById(id), AuthPriorityDTO.class);
+    }
+
+    /**
+     * 访问者模式删除权限
+     * 注意：实际开发中不会这么写，效率太低了，这里只是为了实验设计模式
+     */
+    @Override
+    public Boolean removeAuthPriority(Long id) {
+        AuthPriority authPriority = authPriorityMapper.selectById(id);
+        if (Objects.isNull(authPriority)) {
+            return false;
+        }
+
+        PriorityNode priorityNode = BeanCopierUtil.copy(authPriority, PriorityNode.class);
+        if (Objects.isNull(priorityNode)) {
+            return false;
+        }
+
+        PriorityNodeRelateCheckVisitor checkVisitor = new PriorityNodeRelateCheckVisitor(authPriorityMapper,
+                rolePriorityRelationshipMapper,
+                accountPriorityRelationshipMapper);
+
+        checkVisitor.visit(priorityNode);
+        if (checkVisitor.getCheckResult()) {
+            return false;
+        }
+
+        PriorityNodeRelateDeleteVisitor deleteVisitor = new PriorityNodeRelateDeleteVisitor(authPriorityMapper);
+        deleteVisitor.visit(priorityNode);
+        return true;
     }
 }

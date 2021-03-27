@@ -53,4 +53,9 @@ public class AuthController {
         authService.updateAuthPriority(BeanCopierUtil.copy(request, AuthPriorityDTO.class));
         return ResultT.success();
     }
+
+    @GetMapping("/delAuthPriority/{id}")
+    ResultT<Boolean> delAuthPriorityById(@PathVariable("id") Long id) {
+        return ResultT.successG(authService.removeAuthPriority(id));
+    }
 }
