@@ -62,5 +62,11 @@
             <artifactId>commons-config</artifactId>
             <version>${commons.version}</version>
         </dependency>
+
+        <!-- Utils -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+        </dependency>
     </dependencies>
 </project>

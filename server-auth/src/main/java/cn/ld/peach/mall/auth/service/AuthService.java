@@ -17,4 +17,34 @@ public interface AuthService {
      */
     List<AuthPriorityDTO> listRootAuthPriority();
 
+
+    /**
+     * 根据父权限查询子权限
+     *
+     * @param parentId 权限ID
+     * @return 子权限
+     */
+    List<AuthPriorityDTO> listChildPriorities(Long parentId);
+
+    /**
+     * 添加权限
+     *
+     * @param request 请求
+     */
+    void addAuthPriority(AuthPriorityDTO request);
+
+    /**
+     * 更新权限
+     *
+     * @param request 请求
+     */
+    void updateAuthPriority(AuthPriorityDTO request);
+
+    /**
+     * 根据ID查询权限
+     *
+     * @param parentId 权限ID
+     * @return 权限信息
+     */
+    AuthPriorityDTO getAuthPriorityById(Long parentId);
 }

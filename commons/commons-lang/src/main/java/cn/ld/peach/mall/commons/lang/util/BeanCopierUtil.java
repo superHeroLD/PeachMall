@@ -1,5 +1,6 @@
 package cn.ld.peach.mall.commons.lang.util;
 
+import cn.hutool.core.collection.CollectionUtil;
 import lombok.extern.slf4j.Slf4j;
 import net.sf.cglib.beans.BeanCopier;
 
@@ -35,7 +36,7 @@ public class BeanCopierUtil {
      * @return 转换后的列表
      */
     public static <A, B> List<B> copyList(List<A> sourceList, Class<B> tgtClazz) {
-        if (Objects.isNull(sourceList) || sourceList.size() <= 0) {
+        if (CollectionUtil.isEmpty(sourceList)) {
             return Collections.emptyList();
         }
         Object source = sourceList.get(0);
@@ -78,6 +79,37 @@ public class BeanCopierUtil {
             BEAN_COPIER_CACHE.put(key, beanCopier);
         }
         beanCopier.copy(source, target, null);
+    }
+
+    /**
+     * 拷贝数据直接生成对象
+     *
+     * @param source   源数据
+     * @param tgtClazz 目标类型
+     * @param <B>      目标类型
+     * @return 目标实例
+     */
+    public static <B> B copy(Object source, Class<B> tgtClazz) {
+        if (Objects.isNull(source)) {
+            return null;
+        }
+        String key = genKey(source.getClass(), tgtClazz);
+        BeanCopier beanCopier;
+        if (BEAN_COPIER_CACHE.containsKey(key)) {
+            beanCopier = BEAN_COPIER_CACHE.get(key);
+        } else {
+            beanCopier = BeanCopier.create(source.getClass(), tgtClazz, false);
+            BEAN_COPIER_CACHE.put(key, beanCopier);
+        }
+
+        B b = null;
+        try {
+            b = tgtClazz.newInstance();
+        } catch (InstantiationException | IllegalAccessException e) {
+            log.info("[BeanCopierUtil] copy occur error", e);
+        }
+        beanCopier.copy(source, b, null);
+        return b;
     }
 
     /**
