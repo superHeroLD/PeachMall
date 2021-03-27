@@ -18,4 +18,5 @@ public class AuthDubboServiceImpl implements AuthDubboService {
     public String hello() {
         return "Hello, this is auth server";
     }
+
 }
