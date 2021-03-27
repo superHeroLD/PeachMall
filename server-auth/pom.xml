@@ -52,7 +52,7 @@
 
         <dependency>
             <groupId>cn.ld.peach.mall</groupId>
-            <artifactId>commons</artifactId>
+            <artifactId>commans-lang</artifactId>
             <version>${commons.version}</version>
         </dependency>
     </dependencies>

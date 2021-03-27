@@ -3,7 +3,7 @@ package cn.ld.peach.mall.auth.controller;
 import cn.ld.peach.mall.auth.config.NacosConfig;
 import cn.ld.peach.mall.auth.domain.vo.AuthPriorityVO;
 import cn.ld.peach.mall.auth.service.AuthService;
-import cn.ld.peach.mall.commons.util.BeanCopierUtil;
+import cn.ld.peach.mall.commons.lang.util.BeanCopierUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;

@@ -5,10 +5,9 @@ import cn.ld.peach.mall.auth.domain.AuthPriority;
 import cn.ld.peach.mall.auth.domain.dto.AuthPriorityDTO;
 import cn.ld.peach.mall.auth.mapper.AuthPriorityMapper;
 import cn.ld.peach.mall.auth.service.AuthService;
-import cn.ld.peach.mall.commons.util.BeanCopierUtil;
+import cn.ld.peach.mall.commons.lang.util.BeanCopierUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import lombok.extern.slf4j.Slf4j;
-import org.apache.dubbo.config.annotation.DubboService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

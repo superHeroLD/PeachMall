@@ -1,6 +1,7 @@
 package cn.ld.peach.mall.order.dto;
 
-import cn.ld.peach.mall.commons.domain.BaseDTO;
+
+import cn.ld.peach.mall.commons.lang.base.BaseDTO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
