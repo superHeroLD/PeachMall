@@ -17,7 +17,6 @@ import java.util.List;
  * @date 2021/3/25
  */
 @Slf4j
-@RunWith(SpringRunner.class)
 public class AuthPriorityMapperTest extends BaseTest {
 
     @Resource
