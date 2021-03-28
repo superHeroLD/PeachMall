@@ -1,10 +1,10 @@
 package cn.ld.peach.mall.auth.design.visiter;
 
 import cn.hutool.core.collection.CollectionUtil;
-import cn.ld.peach.mall.auth.domain.AccountPriorityRelationship;
+import cn.ld.peach.mall.auth.domain.AuthAccountPriorityRelationship;
 import cn.ld.peach.mall.auth.domain.AuthPriority;
 import cn.ld.peach.mall.auth.domain.PriorityNode;
-import cn.ld.peach.mall.auth.domain.RolePriorityRelationship;
+import cn.ld.peach.mall.auth.domain.AuthRolePriorityRelationship;
 import cn.ld.peach.mall.auth.mapper.AccountPriorityRelationshipMapper;
 import cn.ld.peach.mall.auth.mapper.AuthPriorityMapper;
 import cn.ld.peach.mall.auth.mapper.RolePriorityRelationshipMapper;
@@ -57,7 +57,7 @@ public class PriorityNodeRelateCheckVisitor implements PriorityNodeVisitor {
 
     @Override
     public void visit(PriorityNode priorityNode) {
-        List<AuthPriority> authPriorities = authPriorityMapper.selectList(Wrappers.<AuthPriority>lambdaQuery().eq(AuthPriority::getParentId, priorityNode.getParentId()));
+        List<AuthPriority> authPriorities = authPriorityMapper.selectList(Wrappers.<AuthPriority>lambdaQuery().eq(AuthPriority::getParentId, priorityNode.getId()));
         if (CollectionUtil.isEmpty(authPriorities)) {
             return;
         }
@@ -80,11 +80,11 @@ public class PriorityNodeRelateCheckVisitor implements PriorityNodeVisitor {
      * @return 如果被占有了就返回true 否则返回false
      */
     private Boolean relateCheck(PriorityNode priorityNode) {
-        Integer roleCountNum = rolePriorityRelationshipMapper.selectCount(Wrappers.<RolePriorityRelationship>lambdaQuery()
-                .eq(RolePriorityRelationship::getPriorityId, priorityNode.getId()));
+        Integer roleCountNum = rolePriorityRelationshipMapper.selectCount(Wrappers.<AuthRolePriorityRelationship>lambdaQuery()
+                .eq(AuthRolePriorityRelationship::getPriorityId, priorityNode.getId()));
 
-        Integer accountCountNum = accountPriorityRelationshipMapper.selectCount(Wrappers.<AccountPriorityRelationship>lambdaQuery()
-                .eq(AccountPriorityRelationship::getPriorityId, priorityNode.getId()));
+        Integer accountCountNum = accountPriorityRelationshipMapper.selectCount(Wrappers.<AuthAccountPriorityRelationship>lambdaQuery()
+                .eq(AuthAccountPriorityRelationship::getPriorityId, priorityNode.getId()));
 
         log.info("[relateCheck] priorityNodeId: {} has {} role related and {} account related with it", priorityNode.getId(), roleCountNum, accountCountNum);
 

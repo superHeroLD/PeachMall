@@ -9,7 +9,7 @@ import java.util.Date;
  * @date 2021/3/27
  */
 @Data
-public class RolePriorityRelationship {
+public class AuthAccountPriorityRelationship {
 
     /**
      * 主键ID
@@ -24,7 +24,7 @@ public class RolePriorityRelationship {
     /**
      * 角色ID
      */
-    private Long roleId;
+    private Long accountId;
 
     /**
      * 创建时间

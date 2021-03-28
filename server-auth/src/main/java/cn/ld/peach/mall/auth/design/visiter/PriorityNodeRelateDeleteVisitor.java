@@ -30,7 +30,7 @@ public class PriorityNodeRelateDeleteVisitor implements PriorityNodeVisitor {
 
     @Override
     public void visit(PriorityNode priorityNode) {
-        List<AuthPriority> authPriorities = authPriorityMapper.selectList(Wrappers.<AuthPriority>lambdaQuery().eq(AuthPriority::getParentId, priorityNode.getParentId()));
+        List<AuthPriority> authPriorities = authPriorityMapper.selectList(Wrappers.<AuthPriority>lambdaQuery().eq(AuthPriority::getParentId, priorityNode.getId()));
         if (CollectionUtil.isEmpty(authPriorities)) {
             return;
         }
