@@ -4,8 +4,6 @@ import cn.ld.peach.mall.auth.BaseTest;
 import cn.ld.peach.mall.auth.domain.AuthPriority;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -24,8 +22,7 @@ public class AuthPriorityMapperTest extends BaseTest {
 
     @Test
     public void testSelect() {
-        System.out.println(("----- selectAll method test ------"));
         List<AuthPriority> priorityList = authPriorityMapper.selectList(null);
-        System.out.println("priorityList: " + priorityList);
+        log.info("priorityList: {}", priorityList);
     }
 }

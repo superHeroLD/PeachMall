@@ -1,6 +1,5 @@
-package cn.ld.peach.mall.auth;
+package cn.ld.peach.mall.goods;
 
-import lombok.extern.slf4j.Slf4j;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -12,6 +11,6 @@ import org.springframework.test.context.junit4.SpringRunner;
  * @date 2021/3/25
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = ServerAuthApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = ServerGoodsApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class BaseTest {
 }

@@ -1,8 +1,6 @@
 package cn.ld.peach.mall.goods.service;
 
-import cn.ld.peach.mall.goods.dto.GoodsSkuDTO;
-
-import java.util.List;
+import cn.ld.peach.mall.goods.domain.dto.GoodsSkuDTO;
 
 /**
  * 商品中心对外接口

@@ -1,4 +1,4 @@
-package cn.ld.peach.mall.goods.dto;
+package cn.ld.peach.mall.goods.domain.dto;
 
 import cn.ld.peach.mall.commons.lang.base.BaseDTO;
 import lombok.Data;
