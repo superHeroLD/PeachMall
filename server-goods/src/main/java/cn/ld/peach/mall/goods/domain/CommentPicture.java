@@ -20,11 +20,11 @@ public class CommentPicture extends BaseDO {
     /**
      * 评论ID
      */
-    private long commentInfoId;
+    private Long commentInfoId;
     /**
      * 图片顺序
      */
-    private long sequence;
+    private Integer sequence;
     /**
      * 图片信息
      * 这里的图片正常来说应该存储的是S3的地址
