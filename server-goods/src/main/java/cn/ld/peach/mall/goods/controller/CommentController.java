@@ -10,6 +10,7 @@ import cn.ld.peach.mall.goods.domain.vo.CommentInfoVO;
 import cn.ld.peach.mall.goods.service.CommentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
@@ -35,7 +36,7 @@ public class CommentController {
 
     @PostMapping("/publishComment")
     @SuppressWarnings("unchecked")
-    public ResultT<Void> publishComment(CommentInfoVO commentInfoVO, MultipartFile[] files) {
+    public ResultT<Void> publishComment(@RequestBody CommentInfoVO commentInfoVO, MultipartFile[] files) {
         checkArgument(Objects.nonNull(commentInfoVO), "commentInfoVO is null");
 
         CommentInfoDTO commentInfoDTO = BeanCopierUtil.copy(commentInfoVO, CommentInfoDTO.class);
