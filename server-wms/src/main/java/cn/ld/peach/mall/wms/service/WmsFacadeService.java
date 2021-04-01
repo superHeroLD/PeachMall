@@ -1,6 +1,6 @@
 package cn.ld.peach.mall.wms.service;
 
-import cn.ld.peach.mall.order.dto.OrderDTO;
+import cn.ld.peach.mall.order.domain.dto.OrderDTO;
 
 /**
  * wms service

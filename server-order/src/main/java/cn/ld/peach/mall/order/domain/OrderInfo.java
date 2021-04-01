@@ -1,35 +1,33 @@
-package cn.ld.peach.mall.order.dto;
+package cn.ld.peach.mall.order.domain;
 
-
-import cn.ld.peach.mall.commons.lang.base.BaseDTO;
+import cn.ld.peach.mall.commons.lang.base.BaseDO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import java.math.BigDecimal;
 
 /**
- * 订单DTO
- *
- * @author lidong
- * @date 2021/3/24
+ * 订单信息
  */
 @Data
+@ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = false)
-public class OrderDTO extends BaseDTO {
+public class OrderInfo extends BaseDO {
+
+    /**
+     * 用户userAccountId
+     */
+    private long userAccountId;
+
     /**
      * 订单编号
      */
     private String orderNo;
-
-    /**
-     * 用户账号ID
-     */
-    private Long userAccountId;
-
     /**
      * 订单状态
      */
-    private Integer orderStatus;
+    private Long orderStatus;
 
     /**
      * 收货人
@@ -37,12 +35,12 @@ public class OrderDTO extends BaseDTO {
     private String consignee;
 
     /**
-     * 收货地址
+     * 邮寄地址
      */
     private String deliveryAddress;
 
     /**
-     * 收货人手机号码
+     * 收货人手机号
      */
     private String consigneeCellPhoneNumber;
 
@@ -52,9 +50,9 @@ public class OrderDTO extends BaseDTO {
     private BigDecimal freight;
 
     /**
-     * 支付方式
+     * 支付方式，1：支付宝，2：微信
      */
-    private Integer payType;
+    private Long payType;
 
     /**
      * 订单总金额
@@ -62,7 +60,7 @@ public class OrderDTO extends BaseDTO {
     private BigDecimal totalAmount;
 
     /**
-     * 折扣金额
+     * 促销活动折扣金额
      */
     private BigDecimal discountAmount;
 
@@ -72,7 +70,7 @@ public class OrderDTO extends BaseDTO {
     private BigDecimal couponAmount;
 
     /**
-     * 应付金额
+     * 应付金额，订单总金额 - 促销活动折扣金额 - 优惠券抵扣金额 + 运费
      */
     private BigDecimal payableAmount;
 
@@ -90,4 +88,9 @@ public class OrderDTO extends BaseDTO {
      * 订单备注
      */
     private String orderComment;
+
+    /**
+     * 评论ID
+     */
+    private Long commentId;
 }
