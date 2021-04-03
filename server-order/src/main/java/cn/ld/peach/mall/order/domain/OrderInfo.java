@@ -88,9 +88,4 @@ public class OrderInfo extends BaseDO {
      * 订单备注
      */
     private String orderComment;
-
-    /**
-     * 评论ID
-     */
-    private Long commentId;
 }
