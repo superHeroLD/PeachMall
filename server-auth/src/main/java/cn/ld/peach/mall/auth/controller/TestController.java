@@ -2,6 +2,7 @@ package cn.ld.peach.mall.auth.controller;
 
 import cn.ld.peach.mall.auth.config.NacosConfig;
 import cn.ld.peach.mall.commons.lang.base.ResultT;
+import com.alibaba.csp.sentinel.annotation.SentinelResource;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -22,9 +23,12 @@ public class TestController {
     private NacosConfig nacosConfig;
 
     @GetMapping("/testNacosConfig")
+    @SentinelResource("testNacosConfig")
     ResultT<String> testNacosConfig() {
         String appName = nacosConfig.getAppName();
         log.info("get appName from nacos config: {}", appName);
         return ResultT.successG(appName);
     }
+
+
 }

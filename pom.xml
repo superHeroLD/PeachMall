@@ -87,6 +87,12 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+                <version>${spring.cloud.alibaba.version}</version>
+            </dependency>
             <!-- 统一 springBoot 版本 -->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
