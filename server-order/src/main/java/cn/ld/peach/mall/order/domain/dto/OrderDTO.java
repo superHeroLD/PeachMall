@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 /**
  * 订单DTO
@@ -89,4 +90,9 @@ public class OrderDTO extends BaseDTO {
      * 订单备注
      */
     private String orderComment;
+
+    /**
+     * 订单Item列表
+     */
+    private List<OrderItemDTO> orderItemDTOList;
 }
