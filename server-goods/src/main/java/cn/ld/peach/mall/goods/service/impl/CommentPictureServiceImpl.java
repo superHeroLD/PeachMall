@@ -1,7 +1,7 @@
 package cn.ld.peach.mall.goods.service.impl;
 
-import cn.ld.peach.mall.goods.domain.CommentPicture;
-import cn.ld.peach.mall.goods.mapper.CommentPictureMapper;
+import cn.ld.peach.mall.goods.domain.comment.CommentPicture;
+import cn.ld.peach.mall.goods.mapper.comment.CommentPictureMapper;
 import cn.ld.peach.mall.goods.service.CommentPictureService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;

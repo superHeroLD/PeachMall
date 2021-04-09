@@ -1,4 +1,4 @@
-package cn.ld.peach.mall.goods.domain;
+package cn.ld.peach.mall.goods.domain.comment;
 
 
 import cn.ld.peach.mall.commons.lang.base.BaseDO;

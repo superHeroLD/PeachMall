@@ -1,4 +1,4 @@
-package cn.ld.peach.mall.goods.mapper;
+package cn.ld.peach.mall.goods.mapper.comment;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import org.apache.ibatis.annotations.Mapper;

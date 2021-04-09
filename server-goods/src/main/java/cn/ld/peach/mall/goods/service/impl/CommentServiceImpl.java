@@ -2,9 +2,9 @@ package cn.ld.peach.mall.goods.service.impl;
 
 import cn.ld.peach.mall.commons.lang.constant.WhetherEnum;
 import cn.ld.peach.mall.commons.lang.util.BeanCopierUtil;
-import cn.ld.peach.mall.goods.domain.CommentInfo;
+import cn.ld.peach.mall.goods.domain.comment.CommentInfo;
 import cn.ld.peach.mall.goods.domain.dto.CommentInfoDTO;
-import cn.ld.peach.mall.goods.mapper.CommentInfoMapper;
+import cn.ld.peach.mall.goods.mapper.comment.CommentInfoMapper;
 import cn.ld.peach.mall.goods.service.CommentPictureService;
 import cn.ld.peach.mall.goods.service.CommentService;
 import lombok.extern.slf4j.Slf4j;

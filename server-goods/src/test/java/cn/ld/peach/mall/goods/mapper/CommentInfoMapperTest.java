@@ -1,7 +1,8 @@
 package cn.ld.peach.mall.goods.mapper;
 
 import cn.ld.peach.mall.goods.BaseTest;
-import cn.ld.peach.mall.goods.domain.CommentInfo;
+import cn.ld.peach.mall.goods.domain.comment.CommentInfo;
+import cn.ld.peach.mall.goods.mapper.comment.CommentInfoMapper;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 
