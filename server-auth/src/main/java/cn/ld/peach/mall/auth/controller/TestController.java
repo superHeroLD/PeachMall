@@ -23,12 +23,17 @@ public class TestController {
     private NacosConfig nacosConfig;
 
     @GetMapping("/testNacosConfig")
-    @SentinelResource("testNacosConfig")
+    @SentinelResource(value = "testNacosConfig", fallback = "testFallBack")
     ResultT<String> testNacosConfig() {
         String appName = nacosConfig.getAppName();
         log.info("get appName from nacos config: {}", appName);
+
+        int i = 1 / 0;
         return ResultT.successG(appName);
     }
 
 
+    public ResultT<String> testFallBack() {
+        return ResultT.successG("Sentinel Blocked");
+    }
 }
